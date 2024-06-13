@@ -28,4 +28,26 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/main/webapp/WEB-INF/views/users</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>src/main/webapp/WEB-INF/views/users/joinform.jsp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Downloads/users/users/joinform.html</locationURI>
+		</link>
+		<link>
+			<name>src/main/webapp/WEB-INF/views/users/joinsuccess.jsp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Downloads/users/users/joinsuccess.html</locationURI>
+		</link>
+		<link>
+			<name>src/main/webapp/WEB-INF/views/users/loginform.jsp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Downloads/users/users/loginform.html</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
