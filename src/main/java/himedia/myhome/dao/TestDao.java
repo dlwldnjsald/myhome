@@ -48,6 +48,7 @@ public class TestDao {
 		System.out.println(name + " INSERT " + (success ? "SUCCESS": "FAILED"));
 	}
 
+	
 	public static void list() {
 		UsersDao dao = new UsersDaoOracleImpl("himedia", "himedia");
 		
