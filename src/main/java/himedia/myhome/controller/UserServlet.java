@@ -2,6 +2,9 @@ package himedia.myhome.controller;
 
 import java.io.IOException;
 
+import himedia.myhome.dao.UsersDao;
+import himedia.myhome.dao.UsersDaoOracleImpl;
+import himedia.myhome.vo.UserVo;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -36,7 +39,40 @@ public class UserServlet extends BaseServlet {
 		super.doGet(req, resp);
 	}
 
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// a : insert -> 회원가입
+		
+		String actionName = req.getParameter("a");
+		
+		if("join".equals(actionName)) {
+			// 가입 처리
+			//form 데이터 수신
+			String name = req.getParameter("name");
+			String password = req.getParameter("password");
+			String email = req.getParameter("email");
+			String gender = req.getParameter("gender");
+			
+			UserVo vo = new UserVo(name, password, email, gender);
+			
+			UsersDao dao = new UsersDaoOracleImpl(dbuser,dbpass);
+			
+			boolean success = dao.insert(vo);
+			
+			if(success) {
+				resp.sendRedirect(req.getContextPath() + "/users?a=joinsuccess");
+			} else {
+				resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "가입 실패");
+			}
+			
+		} else {
+			resp.sendError(HttpServletResponse.SC_NOT_FOUND); //404 not found
+		}
+		
+	}
 
+  
+	
 		
 	
 }

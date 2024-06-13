@@ -23,5 +23,10 @@
 		<param-name>dbpass</param-name>
 		<param-value>himedia</param-value>
 	</context-param>
-
+	
+	<!-- 정적파일 (js,css) 서비스를 위한 default 서블릿 매핑 -->
+	<servlet-mapping>
+	 	<servlet-name>default</servlet-name>
+	 	<url-pattern>/css/*</url-pattern>
+	</servlet-mapping>
 </web-app>
