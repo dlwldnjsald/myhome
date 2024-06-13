@@ -14,8 +14,8 @@
 <body>
   <div id="container">
   
-    <!--  div id="header"> <h1>My Homepage</h1> </div> 
-    <!-- /header/// header.jsp로 이동함-->
+    <%--  div id="header"> <h1>My Homepage</h1> </div> 
+    <!-- /header/// header.jsp로 이동함--%>
     
     <jsp:include page="/WEB-INF/views/includes/header.jsp">
     	<jsp:param name="param1" value="value1" />
