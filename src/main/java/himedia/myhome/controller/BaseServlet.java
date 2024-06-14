@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 //Context Parameter를 받아와서 자식들에게 물려주는 역할 담당해보기
 //HttpServlet 상속받기
 //abstract 물려줘야하니 protected 로 설정
-public class BaseServlet extends HttpServlet{
+public abstract class BaseServlet extends HttpServlet{
 	
 	//물려줘야하니 protected 로 설정
 	protected String dbuser = null;

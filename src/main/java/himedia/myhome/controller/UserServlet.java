@@ -33,10 +33,10 @@ public class UserServlet extends BaseServlet {
 			rd.forward(req, resp);
 		
 		} else { //actionparameter가 없을경우
-			//홈페이지로 리다이렉트 -> "/"
-			resp.sendRedirect(req.getContextPath() + "/");
+			//홈페이지로 리다이렉트 ->
+			resp.sendRedirect(req.getContextPath()); // "/" 붙이지 않는 이유??
 		}
-		super.doGet(req, resp);
+		//super.doGet(req, resp); 지우주기 
 	}
 
 	@Override
