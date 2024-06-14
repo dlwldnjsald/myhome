@@ -22,6 +22,8 @@ public class UserServlet extends BaseServlet {
 		// a = joinform -> 가입 폼 페이지로 forward
 		// a = joinsuccess -> 가입 성공 페이지로 forward
 		
+		// a=: logout -> 세션지우고 /redirect할것 
+		
 		String actionName = req.getParameter("a");
 		
 		if("joinform".equals(actionName)) {
@@ -45,6 +47,16 @@ public class UserServlet extends BaseServlet {
 			RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/views/users/loginform.jsp");
 			rd.forward(req, resp);
 		
+		// a=: logout -> 세션지우고 /redirect할것 	
+		// 로그아웃	
+		} else if("logout".equals(actionName)) {
+			//로그아웃 세션 무효화시키기
+			HttpSession session = req.getSession();
+			session.removeAttribute("authUser"); //개별 속성 삭제
+			session.invalidate(); //세션 무효화
+			resp.sendRedirect(req.getContextPath());
+			
+			
 		} else { //actionparameter가 없을경우
 			//홈페이지로 리다이렉트 ->
 			resp.sendRedirect(req.getContextPath()); // "/" 붙이지 않는 이유??
