@@ -27,7 +27,7 @@ public class SetCookieController extends HttpServlet {
 		
 		out.println("<h1>Cookie 저장</h1>");
 		//	testCookie
-		Cookie c = new Cookie("testCookie", 
+		Cookie c = new Cookie("testCookie",
 				URLEncoder.encode("Servlet에서 쿠키 저장을 명령합니다. SetCookie",
 						"UTF-8"));
 		
@@ -38,6 +38,7 @@ public class SetCookieController extends HttpServlet {
 		
 		out.printf("<p>%s를 쿠키이름 %s로 저장합니다.</p>", c.getValue(), c.getName());
 	}
+	
 	
 	
 }
