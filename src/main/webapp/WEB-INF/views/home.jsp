@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" 
+		contentType="text/html; charset=UTF-8"
+    	pageEncoding="UTF-8"%>
    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -13,7 +14,12 @@
 		<!-- TODO: 현재 페이지에 적절한 CSS를 임포트하십시오. -->
 		<link type="text/css" 
 			rel="stylesheet" 
-			href="<%= request.getContextPath() %>/css/home.css"/>
+			
+			<%-- href="<%= request.getContextPath() %>/css/home.css"/>  --%>
+			href="<c:url value="/css/home.css"/>" />	
+			<!--  <c:url value="/css/home.css" /> 이렇게 사용하는 경우 
+					자동으로 contextPath인 /myhome/css/home.css이 만들어짐 -->
+				
 			
 	</head>
 	
